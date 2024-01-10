@@ -1,5 +1,8 @@
 package com.atanu;
 
+/**
+ * @author Atanu
+ */
 public class Armstrong {
 
     public static void main(String[] args) {
