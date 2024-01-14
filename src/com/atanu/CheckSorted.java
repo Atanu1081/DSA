@@ -1,7 +1,5 @@
 package com.atanu;
 
-import java.util.Arrays;
-
 public class CheckSorted {
 
 	public static void main(String[] args) {
