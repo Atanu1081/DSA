@@ -9,7 +9,7 @@ public class RightRotation {
 		 
         int [] arr = new int [] {12, 3, 6, 99};
         int [] arr1 = new int [] {12, 3, 6, 99};
-        int [] arr2 = new int [] {12, 3, 6, 99};
+        int [] arr2 = new int [] {12, 3, 6, 99, 51};
         int [] arr3 = new int [] {12, 3, 6, 99};
 
         print(arr);
@@ -24,6 +24,9 @@ public class RightRotation {
 		rightByD2(arr2, 2);
 		print(arr2);
 
+		print(arr3);
+		rightByD3(arr3, 1);
+		print(arr3);
 	}
 
 
@@ -61,6 +64,25 @@ public class RightRotation {
 			arr[i] = temp[i];
 		}
 	}
+
+	// TC : O(n)
+	// SC : O(1)
+	private static void rightByD3(int[] arr, int d) {
+		int n = arr.length;
+		reverse(arr, 0, d-1);
+		reverse(arr, d, n-1);
+		reverse(arr, 0, n-1);
+	}
+
+	private static void reverse(int[] arr, int start, int end) {
+		if (start >= end)
+			return;
+		int temp = arr[end];
+		arr[end] = arr[start];
+		arr[start] = temp;
+		reverse(arr, start+1, end-1);
+	}
+
 
 	private static void print(int[] arr) {
 		Arrays.stream(arr).forEach(e -> System.out.print(e + " "));
