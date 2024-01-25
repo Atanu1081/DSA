@@ -4,9 +4,10 @@ public class LastOccurrence {
 
     public static void main(String[] args) {
         int[] arr = {1, 3, 7, 7, 7, 9};
+        int[] arr1 = {1,1,1,1,1,0,0,0};
 
-        System.out.println(linear(arr, 7));
-        System.out.println(binary(arr, 7));
+        System.out.println(linear(arr1, 1));
+        System.out.println(binary(arr1, 1));
     }
 
     // TC: O(n)
