@@ -1,19 +1,20 @@
 package com.atanu;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author Atanu
  */
 public class PrintMatrix {
     public static void main(String[] args) {
         int[ ][ ] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[ ][ ] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
 
-        normalPrint(matrix);
-        System.out.println("*************************");
+        normalPrint(matrix1);
         snakeTraversal(matrix, 3, 3);
-        System.out.println("*************************");
         boundaryTraversal(matrix, 3, 3);
-        System.out.println("*************************");
-        spiralTraversal(matrix, 3, 3);
+        spiralTraversal(matrix1, 3, 4);
     }
 
     // TC : O(m*n)
@@ -25,6 +26,7 @@ public class PrintMatrix {
             }
             System.out.println();
         }
+        System.out.println("*************************");
     }
 
     // TC : O(m*n)
@@ -73,9 +75,9 @@ public class PrintMatrix {
     // SC : O(1)
     private static void spiralTraversal(int[][] matrix, int r, int c) {
         int top = 0;
-        int right = c-1;
+        int right = matrix[1].length-1;
         int left = 0;
-        int bottom = r-1;
+        int bottom = matrix.length-1;
         while (top <= bottom && left <= right) {
             for (int i = left; i <= right; i++)
                 System.out.print(matrix[top][i] + " ");
